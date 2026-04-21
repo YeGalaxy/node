@@ -1,0 +1,18 @@
+proxy-groups:
+  - name: 🚀 节点选择
+    输入: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - <%regionGroupNames%> # 这里会自动展开你的地区分组
+
+  - name: ♻️ 自动选择
+    输入: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: <%interval%>
+    proxies:
+      - <%regionGroupNames%>
+
+rules:
+  - DOMAIN-SUFFIX,google.com,🚀 节点选择
+  - <%rules%> # 自动插入通用规则
