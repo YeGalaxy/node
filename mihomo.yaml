@@ -10,9 +10,13 @@ proxy-providers:
   provider1:
     <<: *p
     url: ""
+    override:
+      additional-prefix: # 节点名称前缀
   provider2:
     <<: *p
     url: ""
+    override:
+      additional-prefix: # 节点名称前缀
 ipv6: true
 allow-lan: true
 mixed-port: 7890
@@ -38,7 +42,7 @@ dns:
 
 proxies:
 - name: "直连"
-  type: direct
+  输入: direct
   udp: true
 proxy-groups:
 - {name: 默认, type: select, proxies: [自动选择, 直连, 香港, 香港自动选择, 台湾, 台湾自动选择, 日本, 日本自动选择, 新加坡, 新加坡自动选择, 美国, 美国自动选择, 其它地区, 全部节点], icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Proxy.png"}
